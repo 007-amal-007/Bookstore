@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" integrity="sha512-BnbUDfEUfV0Slx6TunuB042k9tuKe3xrD6q4mg5Ed72LTgzDIcLPxg6yI2gcMFRyomt+yJJxE+zJwNmxki6/RA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/fontawesome.min.css" integrity="sha512-U/gkPvaqpUI9k7UC1ivfLUO+hb1dPzQyWskzeYoDjZENrWvLVZ40mg510RvWsVP3YcuKW4lAkfxgU9khbNhTrg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <title>Document</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 db-padd">
+            <div class="dashbard-left">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="dashleft-1">
+                            <h1>Book<span>fl</span>ix</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="dashleft-2">
+                            <ul class="list-group">
+                                <li class="list-group-item active"><a href="#"><i class="fas fa-home"></i>&nbsp;Home</a></li>
+                                <li class="list-group-item"><a href="#"><i class="far fa-address-card"></i>&nbsp;About</a></li>
+                                <li class="list-group-item"><a href="#"><i class="far fa-plus-square"></i>&nbsp;Add Book</a></li>
+                                <li class="list-group-item"><a href="#"><i class="fas fa-list"></i>&nbsp;List Book</a></li>
+                                <li class="list-group-item"><a href="#"><i class="fas fa-list"></i>&nbsp;Customer Order</a></li>
+                                <li class="list-group-item"><a href="#"><i class="fas fa-info-circle"></i>&nbsp;Order Detail</a></li>
+                                <li class="list-group-item"><a href="#"><i class="fas fa-trash-alt"></i>&nbsp;Remove Book</a></li>
+                                <li class="list-group-item"><a href="#"><i class="fas fa-eye"></i>&nbsp;View Order</a></li>
+                              </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-10">
+            <div class="dashboard-right">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="dashright-1">
+                            <li><a href="">Logout</a></li>
+                            <li><a href="">More</a></li>
+                            <li><a class="active" href="">Admin&nbsp;&nbsp;<i class="fas fa-user-circle"></i></a></li>
+                            <li class="search">
+                                <form action="" method="post">
+                                    <input type="text" placeholder="search here">
+                                    <input type="submit" value="search">
+                                </form>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="dashright-2">
+                                <div class="desc">
+                                    <div class="order-bor-out">
+                                        <div class="order-bor">{{ordercount}}</div>
+                                    </div>
+                                    <h1>Orders</h1>
+                                    <p>+232</p>
+                                    <p>View</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="dashright-2">
+                                <div class="desc">
+                                    <div class="order-bor-out"><div class="order-bor">15+</div></div>
+                                    <h1>Deliverd</h1>
+                                    <p>+232</p>
+                                    <p>View</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="dashright-2">
+                                <div class="desc">
+                                    <div class="order-bor-out"><div class="order-bor">20+</div></div>
+                                    <h1>Cancelled</h1>
+                                    <p>+232</p>
+                                    <p>View</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="dashright-2">
+                                <div class="desc">
+                                    <div class="order-bor-out"><div class="order-bor">9+</div></div>
+                                    <h1>Returned</h1>
+                                    <p>+232</p>
+                                    <p>View</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="dashright-2 right">
+                        <div class="desc">
+                            <h2>Most PIcked One</h2>
+                            <p>+232</p>
+                            <p>View</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="dashright-2 right">
+                                <div class="desc">
+                                    <h2>Favourites books</h2>
+                                    <p>+232</p>
+                                    <p>View</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="dashright-2 right">
+                                <div class="desc">
+                                    <h2>Requests</h2>
+                                    <p>+232</p>
+                                    <p>View</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <!--------------------------------------->
+            {%block body_block%}
+
+
+
+            
+            {%endblock%}
+            <!--------------------------------------->
+
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{%extends 'navigation.html' %}
+
+{%block body_block %}
+
+
+<div class="container myOrders">
+    <div class="row p-2">
+        {%for order in myorders%}
+            <div class="col-md-6 mt-2 mb-3">
+                <div class="orderBox">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="blob1 text-center">
+                                <div class="blob2">
+                                  <img src="{{order.item.image.url}}" alt="">
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-md-12">
+                            <table class="table table-borderless bg-transparent overflow-auto">
+                                <tr class="text-info">
+                                    <th>Item</th>
+                                    <th>Author</th>
+                                    <th>Price</th>
+                                    <th>Date</th>
+                                </tr>
+                                <tr class="text-white">
+                                    <td>{{order.item.book_name}}</td>
+                                    <td>{{order.item.author}}</td>
+                                    <td>{{order.item.price}}</td>
+                                    <td>{{order.date_order}}</td>
+                                    <td>{{order.status}}</td>
+                                    <td>{{order.expected_delivery_date}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {%endfor%}
+    </div>
+</div>
+
+{%endblock%}

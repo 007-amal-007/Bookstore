@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+{% extends 'baseadmin.html' %}
+
+{% block body_block %}
+
+        
+        <div class="row mt-2 mb-3">
+<div class="col-md-12">
+  <table class="table table-bordered table-hover">
+    <tr>
+      <th>Item Name</th>
+      <th>Customer</th>
+      <th>Ordered Date</th>
+      <th>Order Status</th>
+      <th>Actions</th>
+    </tr>
+    {%for order in orders%}
+    <tr>
+        <td>{{order.item.book_name}}</td>
+        <td>{{order.user}}</td>
+        <td>{{order.date_order}}</td>
+        <td>{{order.status}}</td>
+        <td>
+          <a href="{%url 'cust_single_order' order.id %}">view</a>
+          <a href="{%url 'orderupdate' order.id %}">edit</a>
+        </td>
+    </tr>
+    {%endfor%}
+</table>
+</div>
+<div class="col-md-6">
+  {%if delorders%}
+  <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            Deliverd orders
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+              <table class="table">
+                  <tr>
+                      <th>Item Image</th>
+                      <th>Item Name</th>
+                      <th>Customer Name</th>
+                      <th>Ordered Date</th>
+                      <th>Order Status</th>
+                      <th>Actions</th>
+                  </tr>
+                  
+                  {%for order in delorders%}
+                  <tr>
+                      <td><img src="{{order.item.image.url}}" alt="" height="100px"></td>
+                      <td>{{order.item.book_name}}</td>
+                      <td>{{order.user}}</td>
+                      <td>{{order.date_order}}</td>
+                      <td>{{order.status}}</td>
+                      <td></td>
+                  </tr>
+                  {%endfor%}
+                  
+              </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    {%endif%}
+</div>
+<div class="col-md-6">
+  {%if neworders%}
+  <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            Deliverd orders
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+              <table class="table">
+                  <tr>
+                      <th>Item Image</th>
+                      <th>Item Name</th>
+                      <th>Customer Name</th>
+                      <th>Ordered Date</th>
+                      <th>Order Status</th>
+                  </tr>
+                  
+                  {%for order in neworders%}
+                  <tr>
+                      <td><img src="{{order.item.image.url}}" alt="" height="100px"></td>
+                      <td>{{order.item.book_name}}</td>
+                      <td>{{order.user}}</td>
+                      <td>{{order.date_order}}</td>
+                      <td>{{order.status}}</td>
+                  </tr>
+                  {%endfor%}
+                  
+              </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    {%endif%}
+</div>
+</div>
+    {%endblock%}

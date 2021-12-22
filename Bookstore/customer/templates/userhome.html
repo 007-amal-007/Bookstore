@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{%extends 'base.html' %}
+
+{%block body_block %}
+
+<div class="container mt-3 latestnew">
+  <h1 class="newarrtext"><span>New</span> Arrivals</h1> 
+  <div class="row mb-4 text-center">
+    {%for book in lbooks%}
+    <div class="col-sm-2">
+        <div class="blob1">
+          <div class="blob2">
+            <img src="{{book.image.url}}" alt="">
+          </div>
+        </div>
+    </div>
+    {%endfor%}
+  </div>
+  </div>
+
+<div class="container mb-3 morechoice">
+  <h2 class="newarrtext"><span>More</span> Choices</h2> 
+    <div class="row">
+        {%for book in books%}
+      <div class="col-md-3 mb-3 mt-2">
+        <div class="bookcard">
+          <div class="bookimg-gradient">
+            <img src="{{book.image.url}}" alt="">
+            <div class="bookimg-above">
+              <button type="submit" class="offer">50%</button>
+              <button type="submit" class="like"><a href="{%url 'adwhishlist' book.id %}" class="text-white"><i class="far fa-heart"></i></a></button>
+            </div>
+            <div class="bookimg-desc text-white">
+              <h1>{{book.book_name}}</h1>
+              <span>{{book.author}}</span>
+              <span>Rs/-&nbsp;₹{{book.price}}</span>
+              <div class="bookimg-button">
+                <button  class="cart"><a href="{%url 'addtocart' book.id %}" class="text-white"><i class="fas fa-cart-plus"></i></a>
+                </button>
+                <button class="buy"><a href="{%url 'ordercreate' book.id %}" class="text-white text-decoration-none">Buynow</a></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {%endfor%}
+      </div>
+    </div>
+
+
+
+
+{%endblock%}
